@@ -59,6 +59,7 @@ jobs:
       - name: Prepare project
         run: |
           rm -f project.binary
+          printf '\n[rendering]\nrenderer/rendering_method="gl_compatibility"\nrenderer/rendering_method.mobile="gl_compatibility"\ntextures/vram_compression/import_etc2_astc=true\n' >> project.godot
           rm -rf .godot
           # use the readable .gd scripts instead of the compiled .gdc copies
           for f in *.gd.remap; do rm -f "$f" "${f%.gd.remap}.gdc"; done
